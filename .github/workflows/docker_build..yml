@@ -30,7 +30,7 @@ jobs:
           context: ./
           push: true
           #dockerfile: ./Dockerfile   # Especifique o caminho para o seu Dockerfile
-          tags: moisesgc/webacademy:latest
+          tags: edwat/webacademy:latest
 
   deploy:
     runs-on: ubuntu-latest
