@@ -2,7 +2,7 @@ name: Build on DockerHub
 on:
   push:
     branches:
-      - main  
+      - main  # Mude para o nome do seu ramo, se necessário
 
 env:
   DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
@@ -26,12 +26,17 @@ jobs:
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
-       
+        with:
+          context: ./
+          push: true
+          #dockerfile: ./Dockerfile   # Especifique o caminho para o seu Dockerfile
+          tags: moisesgc/webacademy:latest
 
   deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Fazendo deploy
         run: echo "Deploy com sucesso!"
+
 
 
