@@ -26,11 +26,7 @@ jobs:
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
-        with:
-          context: ./
-          push: true
-          #dockerfile: ./Dockerfile   # Especifique o caminho para o seu Dockerfile
-          tags: moisesgc/webacademy:latest
+       
 
   deploy:
     runs-on: ubuntu-latest
